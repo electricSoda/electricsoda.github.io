@@ -1,0 +1,161 @@
+body {
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  animation: fadein1 2s forwards;
+}
+
+/*---------------------------------------------*/
+/*nav bar*/
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background-color: #80bfff;
+  font-family: "Comfortaa", verdana, sans-serif;
+}
+
+#logo {
+  color: #f2f2f2;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 16px;
+}
+
+#logo:hover {
+  cursor: pointer;
+}
+
+#e {
+  display: inline-block;
+}
+
+#place {
+  display: inline-block;
+}
+
+.switch {
+  animation: switch 2s infinite;
+}
+
+@keyframes switch {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 125%;
+  position: relative;
+  right: 50%;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links a {
+  color: #f2f2f2;
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.lut:hover {
+  font-size: 14px;
+}
+
+
+/* burger menu */
+.burger {
+  position: absolute;
+  right: 3%;
+  display: none;
+}
+
+.burger div {
+  width: 25px;
+  height: 5px;
+  background-color: rgb(226, 226, 226);
+  margin: 5px;
+}
+
+/* canvas */
+#canvas1 {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(#80bfff, #e6ffff);
+}
+
+/* text */
+#text {
+  position: absolute;
+  z-index: 2;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  width: 100%;
+  color: white;
+  font-size: 50px;
+  font-family: Verdana, sans-serif;
+  animation: in 3s forwards;
+}
+
+/* in */
+@keyframes in {
+  from {
+    width: 0%;
+  }
+  60% {
+    width: 140%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+
+/* social media */
+#socials > button:hover {
+  cursor: pointer;
+}
+
+#github {
+  background-image: url('https://www.flaticon.com/svg/vstatic/svg/25/25231.svg?token=exp=1617560508~hmac=c8f7ea0473ad05835dc63df38f2a202c');
+}
+
+#discord {
+  background-image: url('https://i.pinimg.com/736x/a7/c1/6f/a7c16f96b4aa29e133da7739e0df7316.jpg');
+}
+
+#youtube {
+
+}
+
+/* mobile */
+
+@media screen and (max-width: 1100px) {
+  body {
+    display: none;
+  }
+}
+
+
+
+/* animations */
+@keyframes fadein1 {
+ from {
+   opacity: 0;
+ }
+ to {
+   opacity: 1;
+ }
+}
