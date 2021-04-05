@@ -1,3 +1,6 @@
+//change footer year
+document.getElementById("year").innerHTML = new Date().getFullYear();
+
 //social media
 function discord() {
   window.open('https://discord.gg/ZJYPGZHNMe', '_self');
@@ -40,7 +43,7 @@ window.addEventListener("mousemove", function checkHover(e) {
           place.classList.remove("switch");
           clearInterval(lap);
         }
-      }, 2000)
+      }, 1000)
     }
     checkHover.hovered = hovered;
   }
@@ -177,3 +180,16 @@ window.addEventListener('resize', function () {
 
 start();
 animate();
+
+
+//check for scrolls
+$(document).on('scroll', function() {
+  console.log($(this).scrollTop(), $('#projects').position().top)
+  if ($(this).scrollTop() <= $('#projects').position().top) {
+    $('#first').removeClass();
+    $('#first').addClass('fadein1');
+  } else if ($(this).scrollTop() >= $('#projects').position().top) {
+    $('#first').removeClass();
+    $('#first').addClass('fadeout');
+  }
+})

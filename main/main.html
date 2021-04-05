@@ -11,8 +11,8 @@
 
   <link rel="stylesheet" href="main.css">
 
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa">
 </head>
 
 <body>
@@ -46,43 +46,56 @@
     </div>
   </nav>
 
-  <!--canvas-->
-  <div id='first'>
-    <div id='text'>
-      <h3>Yo.</h3>
-      <h3>My name is Justin Ge.</h3>
-      <h3>Your typical guy in an unusual world.</h3>
-      <h3>Nevertheless, welcome to my site.</h3>
+  <div id='container'>
+    <!--canvas-->
+    <div id='first'>
+      <div id='text'>
+        <h3>Yo.</h3>
+        <h3>My name is Justin Ge.</h3>
+        <h3>Your typical guy in an unusual world.</h3>
+        <h3>Nevertheless, welcome to my site.</h3>
+      </div>
+      <canvas id='canvas1'></canvas>
     </div>
-    <canvas id='canvas1'></canvas>
-  </div>
 
-  <!--projects-->
-  <div id='projects'>
-    <h2>Projects</h2>
-  </div>
+    <!--projects-->
+    <div id='projects'>
+      <h2>Projects</h2>
+    </div>
 
-  <!--experiments-->
-  <div id='experiments'>
-    <h2>Experiments</h2>
-  </div>
+    <!--experiments-->
+    <div id='experiments'>
+      <h2>Experiments</h2>
+    </div>
 
-  <!--updates-->
-  <div id='updates'>
-    <h2>Updates</h2>
-  </div>
+    <!--updates-->
+    <div id='updates'>
+      <h2>Updates</h2>
+    </div>
 
-  <!--about-->
-  <div id='about'>
-    <h2>About</h2>
-  </div>
+    <!--about-->
+    <div id='about'>
+      <h2>About</h2>
+    </div>
 
-  <!-- Media -->
-  <div id='socials'>
-    <h2>Find me on these platforms...</h2>
-    <button id='github' onclick='github()'>Github</button>
-    <button id='disord' onclick='discord()'>Discord</button>
-    <button id='youtube' onclick='youtube()'>Youtube</button>
+    <!-- Media -->
+    <div id='socials'>
+      <h2>Find me on these platforms...</h2>
+      <button id='github' onclick='github()'></button>
+      <button id='discord' onclick='discord()'></button>
+      <button id='youtube' onclick='youtube()'></button>
+    </div>
+
+  <!-- footer -->
+  <div id='footer'>
+    <button>Contact Me!</button>
+    <hr />
+
+    &copy;
+    <a id='year'></a>
+    <a> Justin Ge</a>
+    <p href='#'>Privacy Policy</p>
+    <p href='#'>Own login</p>
   </div>
 
   <!-- Scripts -->
