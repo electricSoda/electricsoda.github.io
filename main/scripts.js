@@ -14,6 +14,24 @@ function github() {
   window.open('https://github.com/electricSoda', '_self');
 }
 
+//Disclaimer
+document.getElementById('dis').addEventListener('click', function() {
+  window.open('https://www.freeprivacypolicy.com/live/68f66254-ceed-4492-b93a-70bf8fb580b8', '_self')
+})
+
+//owner login
+document.getElementById('o').addEventListener('click', function ()  {
+  var pass = prompt("Password", "");
+  if (pass == "123") {
+    document.write('you are gae lol kek so funneee ROFL');
+  };
+})
+
+//Attributes
+document.getElementById('att').addEventListener('click', function() {
+  document.write('Contact form was *stolen*  (jk)   from https://colorlib.com. Find it here: https://colorlib.com/wp/free-html5-contact-form-templates/')
+});
+
 //logo hover
 const isHover = e => e.parentElement.querySelector(':hover') === e;
 
@@ -50,6 +68,28 @@ window.addEventListener("mousemove", function checkHover(e) {
 });
 
 
+//Modal
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("con");
+
+// When the user clicks the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+  document.getElementById('cont').innerHTML = "<object type='text/html' data='contact.html'></object>";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// ---------------------- YES YES IM TOO LAZY TO IMPLEMENT MY ORIGINAL CODE ;-;
+
 //canvas1
 const canvas = document.getElementById('canvas1');
 const ctx = canvas.getContext('2d');
@@ -64,6 +104,17 @@ var mouse = {
 }
 
 let particlesArray;
+
+//particles amount
+let numberparticles = (canvas.height * canvas.width) / 4000;
+
+//settings for particlesuhuhuhuh
+document.getElementById('set').addEventListener('click', function() {
+  var num = prompt("What amount of particles would you like?", "");
+  var aa = parseInt(num);
+  numberparticles = aa;
+  start();
+});
 
 //create particles
 class Particle {
@@ -120,7 +171,6 @@ class Particle {
 //create particless
 function start() {
   particlesArray = [];
-  let numberparticles = (canvas.height * canvas.width) / 3000;
 
   //push
   for (let i =0; i < numberparticles; i++) {
@@ -182,9 +232,16 @@ start();
 animate();
 
 
+//card clicks
+//nottube
+document.getElementById('nottube').addEventListener('click', function () {
+  document.location.href = 'notube/yt.html';
+});
+
+
 //check for scrolls
 $(document).on('scroll', function() {
-  console.log($(this).scrollTop(), $('#projects').position().top)
+  //console.log($(this).scrollTop(), $('#projects').position().top)
   if ($(this).scrollTop() <= $('#projects').position().top) {
     $('#first').removeClass();
     $('#first').addClass('fadein1');

@@ -31,10 +31,10 @@
         <li id='ex' class='lut'>
           <a href="#">Experiments</a>
         </li>
-        <li id='updates' class='lut'>
+        <li id='up' class='lut'>
           <a href="#">Updates</a>
         </li>
-        <li id='about' class='lut'>
+        <li id='abt' class='lut'>
           <a href="#">About</a>
         </li>
       </ul>
@@ -46,6 +46,14 @@
     </div>
   </nav>
 
+  <!--contact-->
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div id='cont'></div>
+    </div>
+  </div>
+
   <div id='container'>
     <!--canvas-->
     <div id='first'>
@@ -55,12 +63,23 @@
         <h3>Your typical guy in an unusual world.</h3>
         <h3>Nevertheless, welcome to my site.</h3>
       </div>
+      <a id='set'><img src='settings.png'></a>
       <canvas id='canvas1'></canvas>
     </div>
 
     <!--projects-->
     <div id='projects'>
       <h2>Projects</h2>
+      <hr>
+      <div class="card" id='nottube'>
+        <img src="https://yt3.ggpht.com/ytc/AAUvwnjDwLJeWs_jcgoVvQpC7YZxWMwP-N__UH-98dxGyw=s900-c-k-c0x00ffffff-no-rj" alt="Avatar" style="width:100%">
+        <hr>
+        <div class="container">
+          <h4><b>Not Tube</b></h4>
+          <p>A site that is like Youtube, but not.</p>
+          <p>Published on April 6th, 2021</p>
+        </div>
+      </div>
     </div>
 
     <!--experiments-->
@@ -88,14 +107,15 @@
 
   <!-- footer -->
   <div id='footer'>
-    <button>Contact Me!</button>
+    <button id='con'>Contact Me!</button>
     <hr />
 
     &copy;
     <a id='year'></a>
     <a> Justin Ge</a>
-    <p href='#'>Privacy Policy</p>
-    <p href='#'>Own login</p>
+    <p id='dis'>Disclaimer</p>
+    <p id='att'>Attributes</p>
+    <p id='o'>Update login</p>
   </div>
 
   <!-- Scripts -->
