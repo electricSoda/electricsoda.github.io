@@ -14,6 +14,31 @@ function github() {
   window.open('https://github.com/electricSoda', '_self');
 }
 
+//logo
+document.getElementById('logo').addEventListener('click', function() {
+  location.href = "#first";
+})
+
+//projects
+document.getElementById('ca').addEventListener('click', function() {
+  location.href = "#projects";
+})
+
+//experiments
+document.getElementById('ex').addEventListener('click', function() {
+  location.href = "#experiments";
+})
+
+//updates
+document.getElementById('up').addEventListener('click', function() {
+  location.href = "#updates";
+})
+
+//about
+document.getElementById('abt').addEventListener('click', function() {
+  location.href = "#about";
+})
+
 //Disclaimer
 document.getElementById('dis').addEventListener('click', function() {
   window.open('https://www.freeprivacypolicy.com/live/68f66254-ceed-4492-b93a-70bf8fb580b8', '_self')

@@ -72,10 +72,25 @@ nav {
   font-size: 12px;
 }
 
-.lut:hover {
-  font-size: 14px;
+#ca:hover {
+  color: lightgrey;
+  cursor: pointer;
 }
 
+#ex:hover {
+  color: lightgrey;
+  cursor: pointer;
+}
+
+#up:hover {
+  color: lightgrey;
+  cursor: pointer;
+}
+
+#abt:hover {
+  color: lightgrey;
+  cursor: pointer;
+}
 
 /* burger menu */
 .burger {
@@ -218,6 +233,10 @@ object {
   padding-top: 300px;
   padding-bottom: 300px;
   text-align: center;
+}
+
+.header {
+  padding-bottom: 50px;
 }
 
 /* experiments */
