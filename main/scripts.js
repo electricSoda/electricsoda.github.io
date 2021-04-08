@@ -10,7 +10,6 @@ updatesFB.on('child_added', snap => {
   lei.setAttribute('class', 'update');
   lei.innerHTML = '<a>'+ date +'</a><p>'+text+'</p>';
   upd.appendChild(lei);
-  alert(lei.innerHTML);
 });
 
 //change footer year
