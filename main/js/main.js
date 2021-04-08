@@ -11,32 +11,41 @@
     var message = $('.validate-input textarea[name="message"]');
 
 
-    $('.validate-form').on('submit',function(){
+    $('.validate-form').on('submit',function(event){
+        event.preventDefault();
         var check = true;
 
-        if($(name).val().trim() == ''){
-            showValidate(name);
+        //random contact number
+        this.contact_number.value=  Math.random() * 100000 | 0;
+
+        if($('#user_name').val().trim() == ''){
+            showValidate(user_name);
             check=false;
         }
 
-        if($(subject).val().trim() == ''){
-            showValidate(subject);
+        //if($(subject).val().trim() == ''){
+          //  showValidate(subject);
+          //  check=false;
+        //}
+
+
+        if($('#user_email').val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) == null) {
+            showValidate(user_email);
             check=false;
         }
 
-
-        if($(email).val().trim().match(/^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) == null) {
-            showValidate(email);
-            check=false;
-        }
-
-        if($(message).val().trim() == ''){
+        if($('#message').val().trim() == ''){
             showValidate(message);
             check=false;
         }
 
         if (check == true) {
-          alert('sent message');
+          emailjs.sendForm('service_4x36ald', 'template_jyhdwem', this)
+                    .then(function() {
+                        alert('Sent message; please also do not spam this or this functionality will be taken down.');
+                    }, function(error) {
+                        alert('FAILED...', error);
+                    });
         }
         return check;
     });

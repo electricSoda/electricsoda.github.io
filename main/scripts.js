@@ -54,7 +54,7 @@ document.getElementById('o').addEventListener('click', function ()  {
 
 //Attributes
 document.getElementById('att').addEventListener('click', function() {
-  document.write('Contact form was *stolen*  (jk)   from https://colorlib.com. Find it here: https://colorlib.com/wp/free-html5-contact-form-templates/')
+  document.write('Contact form was *stolen*  (jk)   from https://colorlib.com. Find it here: https://colorlib.com/wp/free-html5-contact-form-templates/  \r Email form powered by EmailJS');
 });
 
 //logo hover

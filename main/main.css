@@ -73,22 +73,22 @@ nav {
 }
 
 #ca:hover {
-  color: lightgrey;
+  text-decoration: underline;
   cursor: pointer;
 }
 
 #ex:hover {
-  color: lightgrey;
+  text-decoration: underline;
   cursor: pointer;
 }
 
 #up:hover {
-  color: lightgrey;
+  text-decoration: underline;
   cursor: pointer;
 }
 
 #abt:hover {
-  color: lightgrey;
+  text-decoration: underline;
   cursor: pointer;
 }
 
@@ -255,6 +255,25 @@ object {
   padding-top: 300px;
   padding-bottom: 300px;
   text-align: center;
+}
+
+#upd {
+  border: 3px solid black;
+  overflow: auto;
+}
+
+#upd li {
+  border: 1px solid dodgerblue;
+  overflow: auto;
+}
+
+.update {
+  list-style: none;
+}
+
+.update a{
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 /* about */
