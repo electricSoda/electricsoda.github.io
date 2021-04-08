@@ -260,6 +260,7 @@ object {
 #upd {
   border: 3px solid black;
   overflow: auto;
+  height: 600px;
 }
 
 #upd li {

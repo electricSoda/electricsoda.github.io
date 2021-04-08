@@ -1,3 +1,17 @@
+//add update text through firebase
+var updatesFB = firebase.database().ref().child("Updates");
+var upd = document.getElementById('upd');
+
+updatesFB.on('child_added', snap => {
+  var text = snap.child('Text').val();
+  var date = snap.child('Date').val();
+
+  var lei = document.createElement("li");
+  lei.setAttribute('class', 'update');
+  lei.innerHTML = '<a>'+ date +'</a><p>'+text+'</p>';
+  upd.appendChild(lei);
+});
+
 //change footer year
 document.getElementById("year").innerHTML = new Date().getFullYear();
 
@@ -44,11 +58,35 @@ document.getElementById('dis').addEventListener('click', function() {
   window.open('https://www.freeprivacypolicy.com/live/68f66254-ceed-4492-b93a-70bf8fb580b8', '_self')
 })
 
+//publish for update
+function publish() {
+  if (document.getElementById('rupture').value != '') {
+    var rupture = document.getElementById('rupture').value;
+
+    //generate new id every publish
+    var ID = '_' + Math.random().toString(36).substr(2, 9);
+    console.log(ID);
+
+    //firebase
+    var fb = firebase.database().ref();
+
+    fb.child('Updates').child(ID).child('Text').set(rupture);
+
+    //add date
+    var today = new Date();
+    var date = 'Published on '+(today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear();
+    fb.child('Updates').child(ID).child('Date').set(date);
+
+    rupture.value = '';
+    $('#rupture').val('');
+  }
+};
+
 //owner login
 document.getElementById('o').addEventListener('click', function ()  {
   var pass = prompt("Password", "");
   if (pass == "123") {
-    document.write('you are gae lol kek so funneee ROFL');
+    document.getElementById('owner').innerHTML = "<textarea placeholder='Type update here...' type='text' id='rupture'></textarea><button id='rut' onclick='publish()'>Publish</button>";
   };
 })
 
@@ -260,7 +298,7 @@ animate();
 //card clicks
 //nottube
 document.getElementById('nottube').addEventListener('click', function () {
-  document.location.href = 'notube/yt.html';
+  //document.location.href = 'notube/yt.html';
 });
 
 
