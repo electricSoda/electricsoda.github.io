@@ -359,8 +359,8 @@ object {
 /* mobile */
 
 @media screen and (max-width: 1200px) {
-  body {
-    display: none;
+  #areas{
+    display:none;
   }
 }
 
