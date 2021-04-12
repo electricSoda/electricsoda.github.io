@@ -1,16 +1,23 @@
 //add update text through firebase
-var updatesFB = firebase.database().ref().child("Updates");
+var updatesFB = firebase.database().ref().child("Updates").orderByChild('SortDate');
 var upd = document.getElementById('upd');
+
+var objects = [];
 
 updatesFB.on('child_added', snap => {
   var text = snap.child('Text').val();
   var date = snap.child('Date').val();
+  objects.push({text: text, date: date});
 
   var lei = document.createElement("li");
   lei.setAttribute('class', 'update');
   lei.innerHTML = '<a>'+ date +'</a><p>'+text+'</p>';
   upd.appendChild(lei);
 });
+
+//make updates scroll to bottom
+upd.scrollTop = upd.scrollHeight;
+
 
 //change footer year
 document.getElementById("year").innerHTML = new Date().getFullYear();
@@ -67,6 +74,10 @@ function publish() {
     var ID = '_' + Math.random().toString(36).substr(2, 9);
     console.log(ID);
 
+    //generate sortingdate
+    var t = new Date();
+    var sortdate = t.getTime();
+
     //firebase
     var fb = firebase.database().ref();
 
@@ -76,6 +87,9 @@ function publish() {
     var today = new Date();
     var date = 'Published on '+(today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear();
     fb.child('Updates').child(ID).child('Date').set(date);
+
+    //add sortdate
+    fb.child('Updates').child(ID).child('SortDate').set(sortdate);
 
     rupture.value = '';
     $('#rupture').val('');
@@ -94,6 +108,29 @@ document.getElementById('o').addEventListener('click', function ()  {
 document.getElementById('att').addEventListener('click', function() {
   document.write('Contact form was *stolen*  (jk)   from https://colorlib.com. Find it here: https://colorlib.com/wp/free-html5-contact-form-templates/  \r Email form powered by EmailJS');
 });
+
+let openclose = false;
+
+//burger menu (for smaller screens)
+$('#nav-icon').click(function(){
+  if(openclose) {
+    $(this).toggleClass('open');
+    $('.sidenav').hide();
+    openclose = false;
+  } else {
+    $(this).toggleClass('open');
+    $('.sidenav').show();
+    openclose = true;
+  }
+
+});
+
+//check for screen width
+if ($(window).width() > 1200) {
+   document.getElementById("nav-icon").style.display = "none";
+} else {
+  document.getElementById("nav-icon").style.visibility = "visible";
+}
 
 //logo hover
 const isHover = e => e.parentElement.querySelector(':hover') === e;
@@ -289,6 +326,12 @@ window.addEventListener('resize', function () {
   canvas.height = window.innerHeight;
   canvas.width = window.innerWidth;
   mouse.radius = (canvas.height/100) * (canvas.width/100);
+  if ($(window).width() > 1200) {
+     document.getElementById("nav-icon").style.display = "none";
+  } else {
+    document.getElementById("nav-icon").style.visibility = "visible";
+  }
+
 })
 
 start();
