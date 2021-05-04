@@ -1,8 +1,6 @@
 
 (function ($) {
     "use strict";
-
-
     /*==================================================================
     [ Validate ]*/
     var name = $('.validate-input input[name="name"]');
@@ -13,6 +11,7 @@
 
     $('.validate-form').on('submit',function(event){
         event.preventDefault();
+
         var check = true;
 
         //random contact number
@@ -40,9 +39,19 @@
         }
 
         if (check == true) {
+          var roader = document.createElement("div");
+          roader.className = 'roader';
+          roader.id = 'roaderwhl'
+          roader.innerHTML = `<div class='loader'></div>`
+          document.body.appendChild(roader);
+
           emailjs.sendForm('service_4x36ald', 'template_jyhdwem', this)
                     .then(function() {
-                        alert('Sent message; please also do not spam this or this functionality will be taken down.');
+                        document.getElementById('roaderwhl').innerHTML = `<a style='color: white; font-size: 36px;'>Sent Message!</a>`
+                        setTimeout(function() {
+                          document.getElementById('roaderwhl').remove()
+                          document.getElementById('fontact').reset();
+                        }, 4000)
                     }, function(error) {
                         alert('FAILED...', error);
                     });

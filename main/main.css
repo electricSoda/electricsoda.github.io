@@ -16,7 +16,7 @@ nav {
   background-color: #80bfff;
   width: 100%;
   font-family: "Comfortaa", verdana, sans-serif;
-  z-index: 3;
+  z-index: 5;
 }
 
 #logo {
@@ -95,17 +95,33 @@ nav {
 /* side bar */
 .sidenav {
   display: none;
+  padding-top: 8vh;
   z-index: 3;
-  position: fixed;
+  position: absolute;
   color: white;
-  justify-content: center;
-  top: 50%;
-  left: 50%;
-  margin-top: -50px;
-  margin-left: -100px;
-  background: #80bfff;
+  height: 100%;
+  width: 25%;
+  background: #66ccff;
   font-family: Verdana, sans-serif;
   font-size: 24px;
+}
+
+.lut:hover {
+  cursor:pointer;
+  text-decoration: underline;
+}
+
+.sidein {
+  animation: sidein 2s forwards;
+}
+
+@keyframes sidein {
+  from {
+    right:-25%;
+  }
+  to {
+    right: 0%;
+  }
 }
 
 #e {
@@ -416,7 +432,8 @@ object {
 #nav-icon{
   width: 60px;
   height: 45px;
-  position: relative;
+  position: absolute;
+  left: 90%;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);

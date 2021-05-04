@@ -45,9 +45,23 @@ document.getElementById('ca').addEventListener('click', function() {
   location.href = "#projects";
 })
 
+document.getElementById('ca2').addEventListener('click', function() {
+  location.href = "#projects";
+  $('#nav-icon').toggleClass('open');
+  $('.sidenav').hide();
+  openclose = false;
+})
+
 //experiments
 document.getElementById('ex').addEventListener('click', function() {
   location.href = "#experiments";
+})
+
+document.getElementById('ex2').addEventListener('click', function() {
+  location.href = "#experiments";
+  $('#nav-icon').toggleClass('open');
+  $('.sidenav').hide();
+  openclose = false;
 })
 
 //updates
@@ -55,9 +69,23 @@ document.getElementById('up').addEventListener('click', function() {
   location.href = "#updates";
 })
 
+document.getElementById('up2').addEventListener('click', function() {
+  location.href = "#updates";
+  $('#nav-icon').toggleClass('open');
+  $('.sidenav').hide();
+  openclose = false;
+})
+
 //about
 document.getElementById('abt').addEventListener('click', function() {
   location.href = "#about";
+})
+
+document.getElementById('abt2').addEventListener('click', function() {
+  location.href = "#about";
+  $('#nav-icon').toggleClass('open');
+  $('.sidenav').hide();
+  openclose = false;
 })
 
 //Disclaimer
@@ -120,9 +148,9 @@ $('#nav-icon').click(function(){
   } else {
     $(this).toggleClass('open');
     $('.sidenav').show();
+    $('.sidenav').addClass('sidein');
     openclose = true;
   }
-
 });
 
 //check for screen width
