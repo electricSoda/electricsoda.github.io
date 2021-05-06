@@ -2,21 +2,20 @@
 var updatesFB = firebase.database().ref().child("Updates").orderByChild('SortDate');
 var upd = document.getElementById('upd');
 
-var objects = [];
+var objectsu = [];
 
 updatesFB.on('child_added', snap => {
   var text = snap.child('Text').val();
   var date = snap.child('Date').val();
-  objects.push({text: text, date: date});
-
   var lei = document.createElement("li");
+
   lei.setAttribute('class', 'update');
   lei.innerHTML = '<a>'+ date +'</a><p>'+text+'</p>';
   upd.appendChild(lei);
+
+  objectsu.push({'text': text, 'date': date});
 });
 
-//make updates scroll to bottom
-upd.scrollTop = upd.scrollHeight;
 
 
 //change footer year
