@@ -95,3 +95,12 @@ circle:nth-of-type(4) {
     transform: rotate(360deg);
   }
 }
+
+@media (pointer:none), (pointer:coarse) {
+  #fact {
+    font-size: 40px;
+  }
+  #lod {
+    font-size: 40px
+  }
+}

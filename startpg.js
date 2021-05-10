@@ -42,8 +42,8 @@ document.body.onclick = function(e) {
   var container = document.getElementById('container');
   container.classList.add('move1');
   setTimeout(function() {
-      window.open("load/loading.html", "_self");
-  }, 3000);
+      window.open("loading/", "_self");
+  }, 2000);
 };
 
 //right click

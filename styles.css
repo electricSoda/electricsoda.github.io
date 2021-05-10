@@ -35,13 +35,14 @@ body {
 #continue {
   font-family: "Dosis", "verdana", "arial";
   position: absolute;
-  top: 100%;
+  top: 110%;
   left: 50%;
   opacity: 1;
   transform: translate(-50%);
   margin:auto;
   text-align:center;
   animation-delay: 3s;
+  font-size: 15px;
 }
 
 /* img*/
@@ -68,7 +69,7 @@ body {
 
 /* move1 */
 .move1 {
-  animation: move1 4s forwards;
+  animation: move1 2s forwards;
 }
 
 /*lasein*/
@@ -143,5 +144,28 @@ body {
   }
   100% {
     transform: translate(0px, -200px) rotate(270deg);
+  }
+}
+
+/* Mobile */
+
+@media (pointer:none), (pointer:coarse) {
+  #continue {
+    font-family: "Dosis", "verdana", "arial";
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    opacity: 1;
+    transform: translate(-50%);
+    margin:auto;
+    text-align:center;
+    animation-delay: 3s;
+    font-size: 35px;
+  }
+  #blog {
+    white-space: nowrap;
+    overflow: hidden;
+    opacity: 1;
+    font-size: 50px;
   }
 }

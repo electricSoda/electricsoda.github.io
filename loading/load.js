@@ -23,5 +23,5 @@ setInterval(function() {
 }, 500);
 
 setTimeout(function() {
-  window.open("../main/main.html", '_self');
-}, 6000);
+  window.open("../main/", '_self');
+}, 4000);
