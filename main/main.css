@@ -2,7 +2,13 @@ body {
   padding: 0;
   margin: 0;
   opacity: 0;
-  animation: fadein1 2s forwards;
+  animation: fa 2s forwards;
+}
+
+@keyframes fa {
+  to {
+    opacity: 1;
+  }
 }
 
 /*---------------------------------------------*/
@@ -136,7 +142,7 @@ nav {
 .modal {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 3;
   padding-top: 100px;
   left: 0;
   top: 0;
@@ -194,6 +200,20 @@ object {
   padding: 0;
   position: relative;
   top: 70px;
+}
+
+#first {
+  text-align: center;
+  padding-bottom: 200px;
+}
+
+#warning {
+  padding-top: 400px;
+  padding-bottom: 400px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  font-family:Verdana;
 }
 
 /* text */
@@ -287,12 +307,14 @@ object {
   padding-top: 10px;
   padding-bottom: 10px;
   padding-right: 15px;
+  transform: rotate(180deg);
 }
 
 #upd li {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4),0 6px 20px 0 rgba(0,0,0,0.39);
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.4),0 3px 10px 0 rgba(0,0,0,0.39);
   padding-top: 20px;
   padding-bottom: 20px;
+  transform: rotate(-180deg);
 }
 
 #upd li a {
@@ -412,11 +434,22 @@ object {
 
 @keyframes fadein1 {
  from {
-   opacity: 0;
+   transform: scale(0.95);
+   opacity: 0.5;
  }
  to {
+   transform: scale(1);
    opacity: 1;
  }
+}
+
+/* fade in 2 */
+.fadein2 {
+  animation: fadein2 2s forwards;
+}
+
+@keyframes fadein2 {
+
 }
 
 /* fade out */
