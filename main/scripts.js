@@ -383,13 +383,11 @@ $.fn.isInViewport = function() {
     return elementBottom > viewportTop && elementTop < viewportBottom;
 };
 
-$('#first').addClass('fadein1');
-
 $(document).on('scroll', function() {
   //console.log($(this).scrollTop(), $('#projects').position().top)
   if ($('#first').isInViewport()) {
     $('#first').removeClass();
-    $('#first').addClass('fadein1');
+    $('#first').addClass('fa');
   } else {
     $('#first').removeClass();
     $('#first').addClass('fadeout');
