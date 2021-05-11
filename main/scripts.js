@@ -412,6 +412,11 @@ $(document).on('scroll', function() {
   if ($('#updates').isInViewport()) {
     $('#updates').removeClass();
     $('#updates').addClass('fadein1');
+    $(".update").delay(200).each(function(i) {
+      $(this).delay(100 * i).queue(function() {
+        $(this).addClass("show");
+      })
+    })
   } else {
     $('#updates').removeClass();
     $('#updates').addClass('fadeout');
