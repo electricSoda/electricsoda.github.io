@@ -367,8 +367,8 @@ animate();
 
 //card clicks
 //nottube
-document.getElementById('nottube').addEventListener('click', function () {
-  //document.location.href = 'notube/yt.html';
+document.getElementById('tp').addEventListener('click', function () {
+  window.open('https://typingm.glitch.me/', "_self")
 });
 
 
